@@ -1,0 +1,26 @@
+{
+  "name": "trlib",
+  "version": "1.0.0",
+  "description": "Application de gestion d'une bibliothèque",
+  "main": "bundle.js",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fx",
+    "build": "webpack --mode production",
+    "format": "prettier --write ."
+  },
+  "author": "DIABATE Tronka",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -1,0 +1,33 @@
+.container{
+    background-color: white;
+    border: 3px solid darkgreen;
+    border-radius: 5px;
+    margin: auto;
+    position: relative;
+    width: 30vw;
+    padding: 20px;
+    top: 0%;
+    transform: translateY(20%);
+}
+
+h2{
+    color:darkgreen;
+}
+.btn{
+    background-color: darkgreen;
+    color: white;
+}
+.langding-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+/* .btn-container{
+    display: flex;
+    justify-content: space-around;
+} */
+.btn{
+   width: 8vw;
+}
