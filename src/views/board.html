@@ -12,7 +12,7 @@
      <link rel="stylesheet" href="./css/styles.css">
 </head>
 
-<body>
+<body id="body-board">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="javascript:void(0)">Logo</a>
@@ -30,13 +30,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">Utilisateur</a>
                     </li>
+                    <li class="mx-5">
+                      <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search">
+                        <button class="btn btn-primary" type="button">Rechercher</button>
+                      </form>
+                    </li>
                 </ul>
-                <form class="d-flex">
-              <input class="form-control me-2" type="text" placeholder="Search">
-              <button class="btn btn-primary" type="button">Rechercher</button>
-            </form>
+                <button class="btn btn-primary" type="button">Deconnexion</button>
+            </div>
           </div>
-        </div>
       </nav>
       
       <div class="container-fluid mt-5 w-75">

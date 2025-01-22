@@ -4,18 +4,30 @@
     border-radius: 5px;
     margin: auto;
     position: relative;
-    width: 30vw;
+    max-width: 30vw;
     padding: 20px;
     top: 0%;
-    transform: translateY(20%);
+    transform: translateY(50%);
 }
-
+.form-container{
+    background-color: white;
+    border: 3px solid darkgreen;
+    border-radius: 5px;
+    margin: auto;
+    position: relative;
+    max-width: 30vw;
+    padding: 20px;
+    top: 0%;
+    transform: translateY(7%);
+}
 h2{
     color:darkgreen;
 }
 .btn{
     background-color: darkgreen;
     color: white;
+    width: 8vw;
+    margin: 5px;
 }
 .langding-page{
     display: flex;
@@ -24,10 +36,7 @@ h2{
     align-items: center;
     justify-items: center;
 }
-/* .btn-container{
-    display: flex;
-    justify-content: space-around;
-} */
-.btn{
-   width: 8vw;
-}
+
+#body-board{
+    display: none;
+} 
