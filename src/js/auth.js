@@ -1,6 +1,6 @@
 
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
-import auth from '../../firebase-config.js'; 
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from '../../firebase-config.js'; 
 import { changeView } from './router.js';
 
 /**
@@ -56,6 +56,12 @@ const getUser = async () =>
         );
     });
 
+/**
+ * Deconnexion de l'utilisateur
+ */
 
-export { signUpUser, signInUser, getUser};
+const logout = () => signOut(auth);
+
+
+export { signUpUser, signInUser, getUser, logout};
 
