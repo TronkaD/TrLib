@@ -23,11 +23,9 @@
 h2{
     color:darkgreen;
 }
-.btn{
+.btn-color{
     background-color: darkgreen;
     color: white;
-    width: 8vw;
-    margin: 5px;
 }
 .langding-page{
     display: flex;
