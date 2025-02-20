@@ -1,21 +1,26 @@
-
+// Importation des fonctions d'authentification de Firebase
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+// Importation de la configuration d'authentification Firebase
 import { auth } from '../../firebase-config.js'; 
+// Importation de la fonction pour changer de vue dans l'application
 import { changeView } from './router.js';
 
 /**
  * Inscription de l'utilisateur
- * @param {string} email -- user email
- * @param {string} password -- user password
- * @returns { void}
+ * @param {string} email -- email de l'utilisateur
+ * @param {string} password -- mot de passe de l'utilisateur
+ * @returns {void}
  */
-const signUpUser =  (email, password) => {
+const signUpUser = (email, password) => {
+    // Création d'un nouvel utilisateur avec email et mot de passe
     createUserWithEmailAndPassword(auth, email, password)
-        .then ((userCredential) => {
+        .then((userCredential) => {
+            // Affichage d'un message de succès en cas d'inscription réussie
             console.log("Inscription réussie", userCredential);
         })
         .catch((err) => {
-            console.warn ("Ooops erreur", err);
+            // Affichage d'un avertissement en cas d'erreur lors de l'inscription
+            console.warn("Ooops erreur", err);
         });
 };
 
@@ -26,42 +31,45 @@ const signUpUser =  (email, password) => {
  * @returns {void}
  */
 const signInUser = (email, password) => {
+    // Authentification de l'utilisateur avec email et mot de passe
     signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-        changeView("board");
-    })
-    .catch((err) => {
-        console.log("Erreur de connexion", err);
-               
-    });
+        .then(() => {
+            // Changement de vue après une connexion réussie
+            changeView("board");
+        })
+        .catch((err) => {
+            // Affichage d'un message d'erreur en cas d'échec de la connexion
+            console.log("Erreur de connexion", err);
+        });
 }
 
 /**
- *  Obtienir de manière asynchrone l'utilisateur authentifié actuel
+ * Obtention de manière asynchrone l'utilisateur authentifié actuel
  * @returns {Promise<User | null>} -- L'objet utilisateur s'il est connecté, sinon null
-*/
+ */
 const getUser = async () => 
     new Promise((resolve, reject) => {
+        // Écoute des changements d'état d'authentification
         const unsubscribe = onAuthStateChanged(
             auth, 
             (user) => {
-                unsubscribe();
-                if(user) {
-                    resolve(user);
-                }else {
-                    resolve(null);
+                unsubscribe(); // Désinscription de l'écouteur après la première exécution
+                if (user) {
+                    resolve(user); // Résolution de la promesse avec l'utilisateur connecté
+                } else {
+                    resolve(null); // Résolution de la promesse avec null si aucun utilisateur n'est connecté
                 }
             },
-            reject,
+            reject, // Gestion des erreurs
         );
     });
 
 /**
- * Deconnexion de l'utilisateur
+ * Déconnexion de l'utilisateur
  */
+const logout = () => signOut(auth); // Appel de la fonction signOut pour déconnecter l'utilisateur
 
-const logout = () => signOut(auth);
+// Exportation des fonctions pour qu'elles soient utilisées dans d'autres modules
+export { signUpUser, signInUser, getUser, logout };
 
-
-export { signUpUser, signInUser, getUser, logout};
 

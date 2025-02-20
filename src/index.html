@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application TrLib</title>
@@ -8,24 +8,19 @@
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
      <link rel="stylesheet" href="./css/styles.css">
      <script src="../dist/bundle.js" defer></script>
-</head>
+  </head>
 
-<body style="background-image: url(./images/78.jpg); background-size: cover;">
-  <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 50vh;">
-    <div class="text-center w-75">
-      <img src="./images/logo.png"  class="img-fluid mb-3" alt="Logo" style="max-width: 30%;">
+  <body style="background-image: url(./images/78.jpg); background-size: cover;">
+    <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 50vh;">
+      <div class="text-center w-75">
+       <img src="./images/logo.png"  class="img-fluid mb-3" alt="Logo" style="max-width: 30%;">
+      </div>
+      <p class="fw-bolder">Bienvenue sur TrLib une plateforme applicative de gestion d'une bibliothèque</p>
+      <div class="d-flex justify-content-around my-3">
+        <button class="btn btn-color text-white" onclick="changeView('register',true)">S'inscrire</button> 
+        <button class="btn btn-color text-white mx-2" onclick="changeView('login',true)">Connexion</button> 
+      </div>
     </div>
-    <p class="fw-bolder">Bienvenue sur TrLib une plateforme applicative de gestion d'une bibliothèque</p>
-    <div class="d-flex justify-content-around my-3">
-      <button class="btn btn-color text-white" onclick="changeView('register',true)">S'inscrire</button> 
-      <button class="btn btn-color text-white mx-2" onclick="changeView('login',true)">Connexion</button> 
-    </div>
-    <!-- <br>
-    <br> -->
-   <!--  <div class="alert alert-danger">
-      <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-    </div> -->
-</div>
-</body>
+  </body>
 </html>
 
